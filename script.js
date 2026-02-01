@@ -1,61 +1,60 @@
-const frm=document.querySelector('#frm');
-const output=document.querySelector('#output');
-const spinner=document.querySelector('#loading');
-const qrcodeElement=document.querySelector('#qrcode');
-const btnSave=document.querySelector('#btn-save');
+const frm = document.querySelector('#frm');
+const spinner = document.querySelector('#loading');
+const qrcodeElement = document.querySelector('#qrcode');
+const btnSave = document.querySelector('#btn-save');
 
+let qrImage = null; // store latest QR image
 
-
-function generateQRCode(e){
+frm.addEventListener('submit', function (e) {
   e.preventDefault();
-  const url=document.querySelector('#url').value;
-  console.log(url);
-  const size=document.querySelector('#size').value;
-  console.log(size);
-  const clrDark=document.querySelector('#colorDark').value;
-  console.log(clrDark);
-  const clrLight=document.querySelector('#colorLight').value;
-  console.log(clrLight);
 
+  const url = document.querySelector('#url').value;
+  const size = document.querySelector('#size').value;
+  const clrDark = document.querySelector('#colorDark').value;
+  const clrLight = document.querySelector('#colorLight').value;
 
-  if(url===""){
-    alert("Please Enter Your Website Link");
-  }else{
-    //Show Spinner
-    spinner.style.display='flex';
-
-    setTimeout(()=>{
-
-        //Hide Spinner
-        spinner.style.display='none';
-        qrcodeElement.innerHTML="";
-
-        const qrcode=new QRCode('qrcode',{
-          text: url,
-          width: size,
-	        height: size,
-          colorDark : clrDark,
-	        colorLight : clrLight,
-          correctLevel : QRCode.CorrectLevel.H
-        });
-
-
-    },1000);
-
-    
-    createDownloadLink();
+  if (url.trim() === "") {
+    alert("Please enter a URL");
+    return;
   }
-}
-frm.addEventListener('submit',generateQRCode);
 
-function createDownloadLink(){
-  const imgSrc=qrcodeElement.querySelector('img').src;
-  console.log(imgSrc);
-  btnSave.href=imgSrc;
-}
+  spinner.style.display = "block";
+  qrcodeElement.innerHTML = "";
+  qrImage = null;
 
-btnSave.addEventListener('click',()=>{
-  setTimeout(()=>{
-    btnSave.download='qrcode';
-  },50);
+  setTimeout(() => {
+    spinner.style.display = "none";
+
+    // ✅ Generate QR
+    new QRCode("qrcode", {
+      text: url,
+      width: size,
+      height: size,
+      colorDark: clrDark,
+      colorLight: clrLight,
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // ✅ Capture generated QR image
+    setTimeout(() => {
+      qrImage = qrcodeElement.querySelector("img");
+    }, 300);
+
+  }, 500);
+});
+
+// ✅ DOWNLOAD BUTTON LOGIC
+btnSave.addEventListener("click", function () {
+  if (!qrImage) {
+    alert("Generate QR code first");
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.href = qrImage.src;
+  link.download = "qrcode.png";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
