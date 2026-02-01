@@ -18,13 +18,14 @@ frm.addEventListener('submit', function (e) {
     return;
   }
 
-  spinner.style.display = "block";
+  spinner.style.display = "flex";
   qrcodeElement.innerHTML = "";
   qrImage = null;
 
   setTimeout(() => {
     spinner.style.display = "none";
 
+    
     new QRCode("qrcode", {
       text: url,
       width: size,
@@ -34,12 +35,14 @@ frm.addEventListener('submit', function (e) {
       correctLevel: QRCode.CorrectLevel.H
     });
 
+    
     setTimeout(() => {
       qrImage = qrcodeElement.querySelector("img");
     }, 300);
 
   }, 500);
 });
+
 
 btnSave.addEventListener("click", function () {
   if (!qrImage) {
@@ -55,4 +58,3 @@ btnSave.addEventListener("click", function () {
   link.click();
   document.body.removeChild(link);
 });
-
