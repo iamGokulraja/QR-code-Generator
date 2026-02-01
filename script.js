@@ -25,7 +25,6 @@ frm.addEventListener('submit', function (e) {
   setTimeout(() => {
     spinner.style.display = "none";
 
-    // ✅ Generate QR
     new QRCode("qrcode", {
       text: url,
       width: size,
@@ -35,7 +34,6 @@ frm.addEventListener('submit', function (e) {
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    // ✅ Capture generated QR image
     setTimeout(() => {
       qrImage = qrcodeElement.querySelector("img");
     }, 300);
@@ -43,7 +41,6 @@ frm.addEventListener('submit', function (e) {
   }, 500);
 });
 
-// ✅ DOWNLOAD BUTTON LOGIC
 btnSave.addEventListener("click", function () {
   if (!qrImage) {
     alert("Generate QR code first");
@@ -58,3 +55,4 @@ btnSave.addEventListener("click", function () {
   link.click();
   document.body.removeChild(link);
 });
+
