@@ -24,7 +24,7 @@ A simple and interactive QR Code Generator built using HTML, CSS, and JavaScript
 - ⏳ Animated Loading Spinner
 - 📥 Download QR Code as Image
 - ✅ Input Validation
-- 📱 Responsive User Interface
+- 📱 Responsive Design
 
 ---
 
@@ -44,13 +44,11 @@ Library
 
 📁 Project Structure
 
-QR-Code-Generator
+QR-Code-Generator/
 │
 ├── index.html
-├── css
-│   └── style.css
-├── js
-│   └── script.js
+├── style.css
+├── script.js
 ├── README.md
 
 ---
@@ -65,7 +63,7 @@ Move into Project
 
 cd QR-code-Generator
 
-Open the project
+Run the Project
 
 Open index.html in your browser
 
@@ -73,14 +71,13 @@ Open index.html in your browser
 
 🧠 How It Works
 
-1. Enter a valid website URL.
+1. Enter a website URL.
 2. Select the QR code size.
-3. Choose the foreground color.
-4. Choose the background color.
-5. Click the Generate QR Code button.
-6. A loading spinner appears while generating the QR code.
-7. The QR code is displayed.
-8. Click Download to save the QR code.
+3. Choose foreground and background colors.
+4. Click Generate QR Code.
+5. Wait for the loading spinner.
+6. The QR code is generated instantly.
+7. Click Download to save the QR code.
 
 ---
 
@@ -88,7 +85,7 @@ Open index.html in your browser
 
 - Prevents empty URL submission.
 - Displays an alert for invalid input.
-- Clears the previous QR code before generating a new one.
+- Clears previous QR code before generating a new one.
 - Ensures only one QR code is displayed at a time.
 
 ---
@@ -98,17 +95,16 @@ Open index.html in your browser
 - Generates a clear and scannable QR code.
 - Supports customizable colors and sizes.
 - Downloadable as an image.
-- Fast and responsive generation.
 
 ---
 
 🔮 Future Enhancements
 
-- Generate QR Codes for Text
-- Generate QR Codes for Email
-- Generate QR Codes for Phone Numbers
-- Export as SVG and PDF
-- Dark Mode Support
+- QR Code for Text
+- QR Code for Email
+- QR Code for Phone Numbers
+- Export as SVG & PDF
+- Dark Mode
 - Improved Mobile Responsiveness
 
 ---
@@ -121,7 +117,7 @@ Open index.html in your browser
 - Working with Third-Party Libraries
 - Dynamic Content Rendering
 - CSS Animations
-- User Interface Design
+- Responsive UI Design
 
 ---
 
