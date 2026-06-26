@@ -1,95 +1,139 @@
-📱 QR Code Generator – Mini Project
-📌 Project Overview
+📱 QR Code Generator
 
-The QR Code Generator is a web-based mini project that allows users to generate customized QR codes for any website link. Users can control the size, foreground color, and background color of the QR code and download it instantly.
+A simple and interactive QR Code Generator built using HTML, CSS, and JavaScript. This web application allows users to generate customized QR codes for any website URL with adjustable size, foreground color, and background color. Users can also download the generated QR code as an image.
 
-This project demonstrates the practical use of JavaScript DOM manipulation, external libraries, and CSS animations to create an interactive and user-friendly experience.
+---
+
+🚀 Live Demo
+
+🔗 https://iamgokulraja.github.io/QR-code-Generator/
+
+---
+
+📂 GitHub Repository
+
+🔗 https://github.com/iamGokulraja/QR-code-Generator
+
+---
 
 ✨ Features
 
-Generate QR codes for any website URL
+- 🔗 Generate QR Codes for Website URLs
+- 🎨 Customize Foreground & Background Colors
+- 📏 Adjustable QR Code Size
+- ⏳ Animated Loading Spinner
+- 📥 Download QR Code as Image
+- ✅ Input Validation
+- 📱 Responsive User Interface
 
-Customizable QR code size
+---
 
-Dark and light color selection
+🛠 Tech Stack
 
-Animated loading spinner during QR generation
+Frontend
 
-Download generated QR code as an image
+- HTML5
+- CSS3
+- JavaScript (ES6)
 
-Input validation for empty fields
+Library
 
-🛠️ Technologies Used
+- QRCode.js
 
-HTML5 – Structure and layout
+---
 
-CSS3 – Styling and animations
+📁 Project Structure
 
-JavaScript (ES6) – Logic and DOM manipulation
-
-QRCode.js Library – QR code generation
-
-⚙️ Working Principle
-
-User enters a website URL and selects QR size and colors.
-
-On form submission, the default form behavior is prevented.
-
-A loading spinner is displayed while the QR code is generated.
-
-The QRCode.js library generates the QR code dynamically.
-
-The spinner hides once generation is complete.
-
-A download button allows the user to save the QR code image locally.
-
-📂 Project Structure
-QR-Code-Generator/
+QR-Code-Generator
 │
 ├── index.html
-├── css/
+├── css
 │   └── style.css
-├── js/
+├── js
 │   └── script.js
 ├── README.md
 
+---
+
+⚙ Installation
+
+Clone Repository
+
+git clone https://github.com/iamGokulraja/QR-code-Generator.git
+
+Move into Project
+
+cd QR-code-Generator
+
+Open the project
+
+Open index.html in your browser
+
+---
+
+🧠 How It Works
+
+1. Enter a valid website URL.
+2. Select the QR code size.
+3. Choose the foreground color.
+4. Choose the background color.
+5. Click the Generate QR Code button.
+6. A loading spinner appears while generating the QR code.
+7. The QR code is displayed.
+8. Click Download to save the QR code.
+
+---
+
 🧪 Validation & Error Handling
 
-Displays an alert if the URL input field is empty
+- Prevents empty URL submission.
+- Displays an alert for invalid input.
+- Clears the previous QR code before generating a new one.
+- Ensures only one QR code is displayed at a time.
 
-Prevents QR generation without valid input
-
-Ensures only one QR code is displayed at a time
+---
 
 📸 Output
 
-Generates a clear and scannable QR code
+- Generates a clear and scannable QR code.
+- Supports customizable colors and sizes.
+- Downloadable as an image.
+- Fast and responsive generation.
 
-Supports high error correction level for better reliability
+---
 
-Downloadable image format for offline use
+🔮 Future Enhancements
 
-🚀 Future Enhancements
+- Generate QR Codes for Text
+- Generate QR Codes for Email
+- Generate QR Codes for Phone Numbers
+- Export as SVG and PDF
+- Dark Mode Support
+- Improved Mobile Responsiveness
 
-Add QR code format options (SVG, PDF)
-
-Enable QR generation for text, email, and phone numbers
-
-Add dark mode UI
-
-Improve responsiveness for mobile devices
+---
 
 🎯 Learning Outcomes
 
-Understanding JavaScript event handling
+- JavaScript DOM Manipulation
+- Event Handling
+- Form Validation
+- Working with Third-Party Libraries
+- Dynamic Content Rendering
+- CSS Animations
+- User Interface Design
 
-Working with third-party libraries
-
-DOM manipulation and dynamic content updates
-
-Implementing loaders and user-friendly UI
+---
 
 👨‍💻 Author
 
 Gokul Raja
-Frontend Mini Project developed with ❤️ using HTML, CSS & JavaScript
+
+ECE Student | Full Stack Development | AI Enthusiast
+
+GitHub:
+https://github.com/iamGokulraja
+
+---
+
+⭐ If you found this project useful, don't forget to give it a Star.
